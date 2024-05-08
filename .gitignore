@@ -1,0 +1,4 @@
+spotify_million_playlist_dataset/
+venv/
+.DS_Store
+.env
