@@ -55,8 +55,5 @@ def main():
     cursor2.close()
     connection2.close()
 
-    # 後から追加したSQL
-    # CREATE INDEX idx_row_music_id ON similarity_matrix(row_music_id);
-
 
 main()

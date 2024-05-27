@@ -30,7 +30,7 @@ def connect_to_database(database: str):
 spotify_df = pd.DataFrame()
 path = "spotify_million_playlist_dataset/data"
 for i, file_name in enumerate(os.listdir(path)):
-    if i >= 500:
+    if i >= 200:
         break
     with open(os.path.join(path, file_name), "r") as j:
         contents = json.loads(j.read())
@@ -83,6 +83,7 @@ execute_values(
     "INSERT INTO similarity_matrix (row_music_id, col_music_id, value) VALUES %s",
     similarity_matrix,
 )
+cursor.execute("CREATE INDEX idx_row_music_id ON similarity_matrix(row_music_id);")
 
 # # 接続を閉じる
 cursor.close()
